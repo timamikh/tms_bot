@@ -20,13 +20,8 @@ export default defineConfig({
     outDir: 'dist',
     // Генерировать source maps для отладки
     sourcemap: false,
-    // Оптимизация
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-      },
-    },
+    // Оптимизация (используем встроенный esbuild вместо terser)
+    minify: 'esbuild',
   }
 })
 
