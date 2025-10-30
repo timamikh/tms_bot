@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { initMiniApp } from '@telegram-apps/sdk'
 import AuthPage from './pages/AuthPage'
 import VerifyPage from './pages/VerifyPage'
 import DashboardPage from './pages/DashboardPage'
@@ -8,14 +7,22 @@ import './App.css'
 
 function App() {
   useEffect(() => {
-    // Инициализация Telegram Mini App (только если запущено в Telegram)
+    // Инициализация Telegram Mini App (используем нативный API)
     if (window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp
+      
       try {
-        const [miniApp] = initMiniApp()
-        miniApp.ready()
-        miniApp.setHeaderColor('#6366F1')
-        miniApp.setBackgroundColor('#F3F4F6')
-        console.log('Telegram Mini App initialized')
+        tg.ready()
+        tg.expand()
+        
+        // Настройка цветов
+        tg.setHeaderColor('#6366F1')
+        tg.setBackgroundColor('#F3F4F6')
+        
+        console.log('Telegram Mini App initialized', {
+          version: tg.version,
+          platform: tg.platform,
+        })
       } catch (error) {
         console.error('Failed to initialize Telegram Mini App:', error)
       }
