@@ -33,12 +33,32 @@ jobs:
           # cache: 'npm'
           # cache-dependency-path: frontend/package-lock.json
       
+      - name: Debug - Check config
+        run: |
+          echo "=== Checking vite.config.js ==="
+          cat frontend/vite.config.js
+          echo ""
+          echo "=== Node version ==="
+          node --version
+          echo ""
+          echo "=== Git commit ==="
+          git log -1 --oneline
+      
       - name: Install dependencies
         run: |
           cd frontend
           # Полностью очищаем и переустанавливаем
           rm -rf node_modules package-lock.json
           npm install
+      
+      - name: Debug - Check Vite version
+        run: |
+          cd frontend
+          echo "=== Vite version ==="
+          npx vite --version
+          echo ""
+          echo "=== Build config check ==="
+          cat vite.config.js | grep -A5 "build:"
       
       - name: Build
         run: |
