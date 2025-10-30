@@ -1,10 +1,14 @@
 .app {
-  min-height: 100vh;
+  min-height: 100%;
+  width: 100%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @media (prefers-color-scheme: dark) {
