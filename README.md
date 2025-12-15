@@ -96,7 +96,7 @@ npm run build:backend
 ### Информация о боте
 
 - **Бот**: @Prospase_test_bot
-- **Token**: `8406287846:AAEDeB5cOzsRrvCCMunzUHGqNI8W_LkwhnE`
+- **Token**: `<TOKEN>` (храните в .env файле!)
 
 ### Шаги настройки Mini App
 
@@ -160,6 +160,7 @@ Frontend проксирует API запросы на Backend через Vite pr
 ⚠️ **ВАЖНО**: Не публикуйте Bot Token в публичных репозиториях!
 - Храните токен в переменных окружения
 - Используйте `.env` файлы (они уже добавлены в `.gitignore`)
+- Следуйте рекомендациям в [SECURITY.md](./SECURITY.md)
 
 **Last Updated**: 29-10-2025
 

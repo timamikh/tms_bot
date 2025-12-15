@@ -3,7 +3,7 @@
 ## Информация о боте
 
 - **Имя бота**: @Prospase_test_bot
-- **Bot Token**: `8406287846:AAEDeB5cOzsRrvCCMunzUHGqNI8W_LkwhnE`
+- **Bot Token**: `<TOKEN>` (храните в .env файле!)
 
 ⚠️ **ВАЖНО**: Не делитесь токеном бота! Храните его в безопасности.
 
